@@ -4,11 +4,10 @@ import {
   Output,
   EventEmitter,
   ElementRef,
-  ViewChild } from '@angular/core';
+} from '@angular/core';
 import { SearchResult } from 'src/app/models/search-result.model';
 import { YoutubeSearchService } from 'src/app/services/youtube-search.service';
-import { fromEvent, observable } from 'rxjs';
-import { Observable } from 'rxjs';
+import { fromEvent } from 'rxjs';
 import { map, filter, switchAll, debounceTime, tap } from 'rxjs/operators';
 
 
@@ -21,7 +20,6 @@ export class SearchBoxComponent implements OnInit {
 
   @Output() loading: EventEmitter<boolean> = new EventEmitter<boolean>();
   @Output() results: EventEmitter<SearchResult[]> = new EventEmitter<SearchResult[]>();
-  @ViewChild("search") search!: ElementRef;
 
   constructor(private youtube: YoutubeSearchService, private el: ElementRef) { }
 
