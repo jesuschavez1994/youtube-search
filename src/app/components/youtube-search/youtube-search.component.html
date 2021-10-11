@@ -1,0 +1,19 @@
+<div class='container'>
+    <div class="row mt-5">
+        <div class="colmd-4">
+            <h1>YouTube Search</h1>
+        </div>
+        <div class="col-md-8">
+            <app-search-box
+            (loading)="loading = $event"
+            (results)="updateResults($event)"
+             ></app-search-box>
+        </div>
+    </div>
+    <div class="row">
+      <app-search-results
+        *ngFor="let result of results"
+        [result]="result">
+      </app-search-results>
+    </div>
+</div>
